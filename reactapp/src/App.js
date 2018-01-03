@@ -17,6 +17,18 @@ import cat9 from './images/cat9.jpeg';
 import cat10 from './images/cat10.jpeg';
 import cat11 from './images/cat11.jpeg';
 
+// function to shuffle array of objects
+function shuffleArray(array) {
+    let i = array.length - 1;
+    for (; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i+1));
+        const temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
+    return array;
+}
+
 // creates a new class, App which extends the React Component
 class App extends Component {
     // stores the score and cat options in the state of App
@@ -89,12 +101,13 @@ class App extends Component {
 
     // renders data to the page (ultimately through index.js)
     render() {
+        const shuffledArray = shuffleArray(this.state.cats);
         return (
             <div className="App">
                 <Header/>
 
                 <div className="grid">
-                    {this.state.cats.map((cat) =>
+                    {shuffledArray.map((cat) =>
                     <Grid name={cat.name} clicked={cat.clicked} imgUrl={cat.imgUrl}/>
                     )}
                 </div>
