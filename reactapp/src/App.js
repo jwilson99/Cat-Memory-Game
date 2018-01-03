@@ -104,7 +104,7 @@ class App extends Component {
         const shuffledArray = shuffleArray(this.state.cats);
         return (
             <div className="App">
-                <Header/>
+                <Header score={this.state.score}/>
 
                 <div className="grid">
                     {shuffledArray.map((cat) =>

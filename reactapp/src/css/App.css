@@ -32,9 +32,9 @@
 }
 
 .tile {
-  max-width: 10em;
+  width: 10em;
   padding: 1em;
-  min-height: 10em;
+  height: 10em;
   overflow: hidden;
   border-radius: 10%;
 }
