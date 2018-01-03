@@ -1,6 +1,5 @@
 // imports React and its components
 import React, {Component} from 'react';
-import Tile from './Tile.js';
 
 // creates Grid class which extends the React components
 class Grid extends Component {
