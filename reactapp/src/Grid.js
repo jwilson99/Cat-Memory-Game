@@ -5,7 +5,7 @@ import React from 'react';
 const Grid = (props) => {
     return (
         // creates a 'tile' with a click event that triggers the scoreUpdate function (from App.js)
-        <div className="tile" onClick={() => props.scoreUpdate(props.name, props.clicked)} >
+        <div className="tile" onClick={() => props.scoreUpdate(props.id, props.clicked)} >
 
             <img src={props.imgUrl} alt={props.name} className="tile-img" />
 

@@ -3,20 +3,6 @@ import React, {Component} from 'react';
 import './css/App.css';
 import Header from './Header.js';
 import Grid from './Grid.js';
-// imports cat images
-import cat from './images/cat.jpg';
-import cat1 from './images/cat1.jpeg';
-import cat2 from './images/cat2.jpeg';
-import cat3 from './images/cat3.jpeg';
-import cat4 from './images/cat4.jpeg';
-import cat5 from './images/cat5.jpeg';
-import cat6 from './images/cat6.jpeg';
-import cat7 from './images/cat7.jpeg';
-import cat8 from './images/cat8.jpeg';
-import cat9 from './images/cat9.jpeg';
-import cat10 from './images/cat10.jpeg';
-import cat11 from './images/cat11.jpeg';
-
 import cats from './cat';
 
 // function to shuffle array of objects
@@ -47,7 +33,7 @@ class App extends Component {
         if (!clicked) {
             this.setState({cats: catsArray});
             catsArray.forEach( (cat) => {
-                if (cat.name === id && cat.clicked === false) {
+                if (cat.key === id && cat.clicked === false) {
                     cat.clicked = true;
                     this.setState({cats: catsArray, score: this.state.score + 1})
                 }
@@ -70,7 +56,7 @@ class App extends Component {
 
                 <div className="grid">
                     {shuffledArray.map((cat) =>
-                    <Grid name={cat.name} clicked={cat.clicked} imgUrl={cat.imgUrl} scoreUpdate={this.scoreUpdate} key={cat.key}/>
+                    <Grid name={cat.name} clicked={cat.clicked} imgUrl={cat.imgUrl} scoreUpdate={this.scoreUpdate} key={cat.key} id={cat.key}/>
                     )}
                 </div>
 
