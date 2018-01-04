@@ -17,6 +17,8 @@ import cat9 from './images/cat9.jpeg';
 import cat10 from './images/cat10.jpeg';
 import cat11 from './images/cat11.jpeg';
 
+import cats from './cat';
+
 // function to shuffle array of objects
 function shuffleArray(array) {
     let i = array.length - 1;
@@ -34,84 +36,11 @@ class App extends Component {
     // stores the score and cat options in the state of App
     state = {
         score: 0,
-        cats: [
-            {
-                name: "cat",
-                clicked: false,
-                imgUrl: cat,
-                key: 0
-            },
-            {
-                name: "cat1",
-                clicked: false,
-                imgUrl: cat1,
-                key: 1
-            },
-            {
-                name: "cat2",
-                clicked: false,
-                imgUrl: cat2,
-                key: 2
-            },
-            {
-                name: "cat3",
-                clicked: false,
-                imgUrl: cat3,
-                key: 3
-            },
-            {
-                name: "cat4",
-                clicked: false,
-                imgUrl: cat4,
-                key: 4
-            },
-            {
-                name: "cat5",
-                clicked: false,
-                imgUrl: cat5,
-                key: 5
-            },
-            {
-                name: "cat6",
-                clicked: false,
-                imgUrl: cat6,
-                key: 6
-            },
-            {
-                name: "cat7",
-                clicked: false,
-                imgUrl: cat7,
-                key: 7
-            },
-            {
-                name: "cat8",
-                clicked: false,
-                imgUrl: cat8,
-                key: 8
-            },
-            {
-                name: "cat9",
-                clicked: false,
-                imgUrl: cat9,
-                key: 9
-            },
-            {
-                name: "cat1",
-                clicked: false,
-                imgUrl: cat10,
-                key: 10
-            },
-            {
-                name: "cat11",
-                clicked: false,
-                imgUrl: cat11,
-                key: 11
-            }
-        ]
+        cats
     };
 
     // function to update score state
-    scoreUpdate = (id,clicked) => {
+    scoreUpdate = (id, clicked) => {
 
         const catsArray = this.state.cats;
 
@@ -129,7 +58,6 @@ class App extends Component {
             });
             this.setState({cats: catsArray, score: 0});
         }
-        console.log(this.state.score);
     };
 
 
