@@ -38,64 +38,98 @@ class App extends Component {
             {
                 name: "cat",
                 clicked: false,
-                imgUrl: cat
+                imgUrl: cat,
+                key: 0
             },
             {
                 name: "cat1",
                 clicked: false,
-                imgUrl: cat1
+                imgUrl: cat1,
+                key: 1
             },
             {
                 name: "cat2",
                 clicked: false,
-                imgUrl: cat2
+                imgUrl: cat2,
+                key: 2
             },
             {
                 name: "cat3",
                 clicked: false,
-                imgUrl: cat3
+                imgUrl: cat3,
+                key: 3
             },
             {
                 name: "cat4",
                 clicked: false,
-                imgUrl: cat4
+                imgUrl: cat4,
+                key: 4
             },
             {
                 name: "cat5",
                 clicked: false,
-                imgUrl: cat5
+                imgUrl: cat5,
+                key: 5
             },
             {
                 name: "cat6",
                 clicked: false,
-                imgUrl: cat6
+                imgUrl: cat6,
+                key: 6
             },
             {
                 name: "cat7",
                 clicked: false,
-                imgUrl: cat7
+                imgUrl: cat7,
+                key: 7
             },
             {
                 name: "cat8",
                 clicked: false,
-                imgUrl: cat8
+                imgUrl: cat8,
+                key: 8
             },
             {
                 name: "cat9",
                 clicked: false,
-                imgUrl: cat9
+                imgUrl: cat9,
+                key: 9
             },
             {
                 name: "cat1",
                 clicked: false,
-                imgUrl: cat10
+                imgUrl: cat10,
+                key: 10
             },
             {
                 name: "cat11",
                 clicked: false,
-                imgUrl: cat11
+                imgUrl: cat11,
+                key: 11
             }
         ]
+    };
+
+    // function to update score state
+    scoreUpdate = (id,clicked) => {
+
+        const catsArray = this.state.cats;
+
+        if (!clicked) {
+            this.setState({cats: catsArray});
+            catsArray.forEach( (cat) => {
+                if (cat.name === id && cat.clicked === false) {
+                    cat.clicked = true;
+                    this.setState({cats: catsArray, score: this.state.score + 1})
+                }
+            })
+        } else if (clicked) {
+            catsArray.forEach( (cat) => {
+                cat.clicked = false;
+            });
+            this.setState({cats: catsArray, score: 0});
+        }
+        console.log(this.state.score);
     };
 
 
@@ -108,7 +142,7 @@ class App extends Component {
 
                 <div className="grid">
                     {shuffledArray.map((cat) =>
-                    <Grid name={cat.name} clicked={cat.clicked} imgUrl={cat.imgUrl}/>
+                    <Grid name={cat.name} clicked={cat.clicked} imgUrl={cat.imgUrl} scoreUpdate={this.scoreUpdate} key={cat.key}/>
                     )}
                 </div>
 
