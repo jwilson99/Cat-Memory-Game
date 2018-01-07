@@ -53,6 +53,7 @@
   justify-content: center;
   flex-wrap: wrap;
   margin: 2em 20em 65px 20em;
+  min-height: 100%;
 }
 
 .tile {
@@ -80,6 +81,9 @@
   to { transform: rotate(360deg); }
 }
 
+
+
+/* media queries for screen-size relative styling*/
 @media (max-width: 1800px) {
   .grid {
     margin: 2em 15em 65px 15em;
