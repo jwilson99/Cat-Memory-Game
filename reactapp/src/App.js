@@ -3,6 +3,7 @@ import React, {Component} from 'react';
 import './css/App.css';
 import Header from './Header.js';
 import Grid from './Grid.js';
+import Footer from './Footer.js';
 import cats from './cat';
 
 // function to shuffle array of objects
@@ -59,6 +60,8 @@ class App extends Component {
                     <Grid name={cat.name} clicked={cat.clicked} imgUrl={cat.imgUrl} scoreUpdate={this.scoreUpdate} key={cat.key} id={cat.key}/>
                     )}
                 </div>
+
+                <Footer />
 
             </div>
         );
