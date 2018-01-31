@@ -6,7 +6,7 @@ Click on the images to gain points. Try to remember which images you have alread
 This site uses ReactJS to dynamically update a player's score and the positioning of tiles through state.
 
 # Deployed site:
-https://jwilson99.github.io/clickygame/
+https://jwilson99.github.io/Cat-Memory-Game/
 
 # To run:
 cd to ...`/clickygame/reactapp`
